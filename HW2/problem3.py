@@ -1,7 +1,5 @@
-from cProfile import label
 import numpy as np
 import matplotlib.pyplot as plt
-from torch import norm, threshold
 
 def generate_random_matrix(m):
     mat = np.random.rand(m, m)
@@ -56,11 +54,12 @@ def plot_spectral_radius(sr, nm, m):
     plt.legend()
     plt.show()
 
-def plot_min_singular_distribution(m_list, threshold):
+def plot_min_singular_distribution(m_list, threshold, markers):
     plt.clf()
     plt.cla()
     fig, (ax1, ax2) = plt.subplots(1, 2)
     sg_min_tail = []
+    j = 0
     for m in m_list:
         sg_min_list = []
         count = 0
@@ -71,7 +70,8 @@ def plot_min_singular_distribution(m_list, threshold):
             if (sg_min < threshold):
                 count += 1
         sg_min_tail.append(count)
-        ax1.plot(sg_min_list, 'o', label='Matrix dim = {}'.format(m))
+        ax1.plot(sg_min_list, markers[j], label='Matrix dim = {}'.format(m))
+        j += 1
     ax2.plot(m_list, sg_min_tail, 'o-')
     ax1.set_title('Singular value distribution')
     ax1.legend()
@@ -98,7 +98,7 @@ def run_experiment(m_list):
     plot_eig_vals(eig_values, m_list, markers)
     plot_spectral_radius(spectral_radius, norm_2, m_list)
     # m_copy = [m_list[4]]
-    # plot_min_singular_distribution(m_list, threshold)
+    plot_min_singular_distribution(m_list, threshold, markers)
 
 if __name__ == '__main__':
     m_list = [8, 16, 32, 64, 128, 256, 512, 1024]

@@ -16,8 +16,9 @@ def construct_rhs(m):
     return b
 
 def get_spectral_radius(mat):
-    ei = np.linalg.eig(mat)
-    sr = np.max(np.absolute(ei))
+    ei, _ = np.linalg.eig(mat)
+    sr = np.abs(ei)
+    sr = np.max(sr)
     return sr
 
 def get_singular_value_min_max(mat):
@@ -127,19 +128,31 @@ def log_plot_qr_time():
         y = y + 1
         times.append(np.log10(time_qr))
         m_list.append(np.log10(m))
+    print(np.array(times[1:]) - np.array(times[0:-1])/(np.array(m_list[1:]) - np.array(m_list[0:-1])))
     plt.clf()
     plt.cla()
     plt.plot(m_list, times)
+    plt.title("Log log plot of Time vs Matrix dimension")
+    plt.xlabel("Matrix dimension log(m)")
+    plt.ylabel("Time log(T)")
     plt.show()
 
 def run_experiment(m):
     mat = construct_1D_laplace(m)
     b = construct_rhs(m)
 
-    # Log time vs Log dimension
-    log_plot_qr_time()
+    sr, sg_max, sg_min, cnum, norm_f, norm_2 = get_matrix_characteristics(mat)
+    print("Spectral Radius    = {}".format(sr))
+    print("Max Singular Value = {}".format(sg_max))
+    print("Min Singular Value = {}".format(sg_min))
+    print("Condition Number   = {}".format(cnum))
+    print("Frobenius Norm     = {}".format(norm_f))
+    print("2 Norm             = {}".format(norm_2))
 
     exit(0)
+
+    # Log time vs Log dimension
+    log_plot_qr_time()
 
     # Solve using QR
     print("Solve using QR")
