@@ -128,7 +128,7 @@ def log_plot_qr_time():
         y = y + 1
         times.append(np.log10(time_qr))
         m_list.append(np.log10(m))
-    print(np.array(times[1:]) - np.array(times[0:-1])/(np.array(m_list[1:]) - np.array(m_list[0:-1])))
+    print((times[-1]-times[0])/(m_list[-1]-m_list[0]))
     plt.clf()
     plt.cla()
     plt.plot(m_list, times)
@@ -141,7 +141,7 @@ def run_experiment(m):
     mat = construct_1D_laplace(m)
     b = construct_rhs(m)
 
-    sr, sg_max, sg_min, cnum, norm_f, norm_2 = get_matrix_characteristics(mat)
+    sr, sg_max, sg_min, cnum, norm_f, norm_2 = get_matrix_characteristics(construct_1D_laplace(1000))
     print("Spectral Radius    = {}".format(sr))
     print("Max Singular Value = {}".format(sg_max))
     print("Min Singular Value = {}".format(sg_min))
@@ -149,11 +149,9 @@ def run_experiment(m):
     print("Frobenius Norm     = {}".format(norm_f))
     print("2 Norm             = {}".format(norm_2))
 
-    exit(0)
-
     # Log time vs Log dimension
     log_plot_qr_time()
-
+    exit(0)
     # Solve using QR
     print("Solve using QR")
     time_qr = time.time()

@@ -1,5 +1,7 @@
+from cProfile import label
 import numpy as np
 import matplotlib.pyplot as plt
+from torch import norm, threshold
 
 def generate_random_matrix(m):
     mat = np.random.rand(m, m)
@@ -40,9 +42,13 @@ def plot_eig_vals(eig_values, m_sizes, markers):
         ax1.plot(ei_real, y, markers[i], label='Matrix dim = '+str(m))
         ax2.plot(ei_complex, y, markers[i], label='Matrix dim = '+str(m))
     ax1.legend()
-    ax1.set_title('Real part of eigen values')
+    ax1.set_xlabel('Real part of eigenvalues')
+    ax1.set_ylabel('Number of eigenvalues')
+    ax1.set_title('Real part of eigenvalues')
     ax2.legend()
-    ax2.set_title('Imaginary part of eigen values')
+    ax2.set_xlabel('Imag part of eigenvalues')
+    ax2.set_ylabel('Number of eigenvalues')
+    ax2.set_title('Imaginary part of eigenvalues')
     # plt.legend()
     plt.show()
 
@@ -51,6 +57,9 @@ def plot_spectral_radius(sr, nm, m):
     plt.cla()
     plt.plot(m, sr, label='Spectral radius')
     plt.plot(m, nm, label='2-Norm')
+    plt.title("Spectral Radius and 2-Norm of matrix")
+    plt.xlabel("Matrix dimension")
+    plt.ylabel("Spectral Radius/2-Norm")
     plt.legend()
     plt.show()
 
@@ -72,10 +81,13 @@ def plot_min_singular_distribution(m_list, threshold, markers):
         sg_min_tail.append(count)
         ax1.plot(sg_min_list, markers[j], label='Matrix dim = {}'.format(m))
         j += 1
-    ax2.plot(m_list, sg_min_tail, 'o-')
     ax1.set_title('Singular value distribution')
     ax1.legend()
+    ax1.set_xlabel("Matrix dimension")
+    ax1.set_ylabel("Value of minimum singular value")
+    ax2.plot(m_list, sg_min_tail, 'o-')
     ax2.set_title('Number of singular values less than {}'.format(threshold))
+    ax2.set_xlabel("Matrix dimensions")
     plt.show()
     return
 
