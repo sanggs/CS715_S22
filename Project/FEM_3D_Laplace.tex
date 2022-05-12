@@ -1,0 +1,81 @@
+%% AMS-LaTeX Created with the Wolfram Language for Students - Personal Use Only : www.wolfram.com
+
+\documentclass{article}
+\usepackage{amsmath, amssymb, graphics, setspace}
+
+\newcommand{\mathsym}[1]{{}}
+\newcommand{\unicode}[1]{{}}
+
+\newcounter{mathematicapage}
+\begin{document}
+
+\begin{doublespace}
+\noindent\(\pmb{p[1] = (1-x/h)(1-y/h)(1-z/h)}\\
+\pmb{p[2] = (1-x/h)(y/h)(1-z/h)}\\
+\pmb{p[3] = (x/h)(1-y/h)(1-z/h)}\\
+\pmb{p[4] = (x/h)(y/h)(1-z/h)}\\
+\pmb{p[5] = (1-x/h)(1-y/h)(z/h)}\\
+\pmb{p[6] = (1-x/h)(y/h)(z/h)}\\
+\pmb{p[7] = (x/h)(1-y/h)(z/h)}\\
+\pmb{p[8] = (x/h)(y/h)(z/h)}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\left(1-\frac{x}{h}\right) \left(1-\frac{y}{h}\right) \left(1-\frac{z}{h}\right)\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\frac{\left(1-\frac{x}{h}\right) y \left(1-\frac{z}{h}\right)}{h}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\frac{x \left(1-\frac{y}{h}\right) \left(1-\frac{z}{h}\right)}{h}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\frac{x y \left(1-\frac{z}{h}\right)}{h^2}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\frac{\left(1-\frac{x}{h}\right) \left(1-\frac{y}{h}\right) z}{h}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\frac{\left(1-\frac{x}{h}\right) y z}{h^2}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\frac{x \left(1-\frac{y}{h}\right) z}{h^2}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\frac{x y z}{h^3}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{mat} = \text{Table}\left[\text{Integrate}\left[\nabla _{\{x,y, z\}}p[i].\nabla _{\{x,y, z\}}p[j], \{x, 0, h\}, \{y, 0, h\},
+\{z, 0, h\}\right], \right.}\\
+\pmb{\{i, 1, 8\}, \{j, 1, 8\}];}\\
+\pmb{\text{mat}\text{//}\text{MatrixForm}}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\left(
+\begin{array}{cccccccc}
+ \frac{h}{3} & 0 & 0 & -\frac{h}{12} & 0 & -\frac{h}{12} & -\frac{h}{12} & -\frac{h}{12} \\
+ 0 & \frac{h}{3} & -\frac{h}{12} & 0 & -\frac{h}{12} & 0 & -\frac{h}{12} & -\frac{h}{12} \\
+ 0 & -\frac{h}{12} & \frac{h}{3} & 0 & -\frac{h}{12} & -\frac{h}{12} & 0 & -\frac{h}{12} \\
+ -\frac{h}{12} & 0 & 0 & \frac{h}{3} & -\frac{h}{12} & -\frac{h}{12} & -\frac{h}{12} & 0 \\
+ 0 & -\frac{h}{12} & -\frac{h}{12} & -\frac{h}{12} & \frac{h}{3} & 0 & 0 & -\frac{h}{12} \\
+ -\frac{h}{12} & 0 & -\frac{h}{12} & -\frac{h}{12} & 0 & \frac{h}{3} & -\frac{h}{12} & 0 \\
+ -\frac{h}{12} & -\frac{h}{12} & 0 & -\frac{h}{12} & 0 & -\frac{h}{12} & \frac{h}{3} & 0 \\
+ -\frac{h}{12} & -\frac{h}{12} & -\frac{h}{12} & 0 & -\frac{h}{12} & 0 & 0 & \frac{h}{3} \\
+\end{array}
+\right)\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{}}\)
+\end{doublespace}
+
+\end{document}
