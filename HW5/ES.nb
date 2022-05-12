@@ -1,0 +1,116 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3523,        106]
+NotebookOptionsPosition[      2955,         88]
+NotebookOutlinePosition[      3349,        104]
+CellTagsIndexPosition[      3306,        101]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"sol1", "=", 
+  RowBox[{"DSolve", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", " ", 
+        RowBox[{
+         SubsuperscriptBox["\[Del]", 
+          RowBox[{"{", 
+           RowBox[{"x", ",", " ", "y"}], "}"}], "2"], 
+         RowBox[{"u", "[", 
+          RowBox[{"x", ",", " ", "y"}], "]"}]}]}], " ", "+", " ", 
+       RowBox[{"u", "[", 
+        RowBox[{"x", ",", " ", "y"}], "]"}]}], " ", "==", " ", 
+      RowBox[{
+       RowBox[{"Cos", "[", 
+        RowBox[{"\[Pi]", "*", "x"}], "]"}], "-", 
+       RowBox[{"Cos", "[", 
+        RowBox[{"\[Pi]", "*", "y"}], "]"}]}]}], "}"}], ",", 
+    RowBox[{"u", "[", 
+     RowBox[{"x", ",", "y"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "y"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.8597217989761477`*^9, 3.859721807181476*^9}, {
+  3.859721872144031*^9, 3.8597219769944067`*^9}, {3.859722050261306*^9, 
+  3.859722059828143*^9}, {3.859722091937495*^9, 3.859722138886984*^9}, {
+  3.859722174096608*^9, 3.859722233975149*^9}, {3.85972228798306*^9, 
+  3.859722289407556*^9}},
+ CellLabel->"In[36]:=",ExpressionUUID->"15179c78-ab32-4659-b450-85a113f8d4e5"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "DSolve", "lpdeprtclr", 
+   "\"General solution is not available for the given linear partial \
+differential equation. Trying to build a particular solution.\"", 2, 36, 17, 
+   25328750568773910067, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.8597218079533587`*^9, {3.8597219482149763`*^9, 3.859721970413323*^9}, {
+   3.859722071695616*^9, 3.859722092456048*^9}, {3.859722180301424*^9, 
+   3.859722234819509*^9}, 3.859722301049943*^9},
+ CellLabel->
+  "During evaluation of \
+In[36]:=",ExpressionUUID->"d79fc744-310b-4ea7-a83f-0af71863f14c"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"u", "[", 
+     RowBox[{"x", ",", "y"}], "]"}], "\[Rule]", 
+    FractionBox[
+     RowBox[{
+      RowBox[{"Cos", "[", 
+       RowBox[{"\[Pi]", " ", "x"}], "]"}], "-", 
+      RowBox[{"Cos", "[", 
+       RowBox[{"\[Pi]", " ", "y"}], "]"}]}], 
+     RowBox[{"1", "+", 
+      SuperscriptBox["\[Pi]", "2"]}]]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{{3.8597222088380013`*^9, 3.859722234832823*^9}, 
+   3.859722301056857*^9},
+ CellLabel->"Out[36]=",ExpressionUUID->"451c29de-3c13-485f-9c89-993e226d177e"]
+}, Open  ]]
+},
+WindowSize->{808, 659},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+FrontEndVersion->"13.0 for Mac OS X x86 (64-bit) (February 4, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"4036606b-f6a8-4240-bb5c-aaef1064004a"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 1180, 30, 34, "Input",ExpressionUUID->"15179c78-ab32-4659-b450-85a113f8d4e5"],
+Cell[1763, 54, 602, 13, 28, "Message",ExpressionUUID->"d79fc744-310b-4ea7-a83f-0af71863f14c"],
+Cell[2368, 69, 571, 16, 52, "Output",ExpressionUUID->"451c29de-3c13-485f-9c89-993e226d177e"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
